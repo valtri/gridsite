@@ -3489,6 +3489,8 @@ int GRST_callback_SSLVerify_wrapper(int ok, X509_STORE_CTX *ctx)
    STACK_OF(X509) *certstack;
    GRSTx509Chain *grst_chain;
 
+   ok = ssl_callback_SSLVerify(ok, ctx);
+
    /* Call caNl callback directly */
    returned_ok = canl_direct_pv_clb(NULL, ctx, ok);
 

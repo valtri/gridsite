@@ -202,3 +202,7 @@ typedef struct {
 #endif
 
 extern module AP_MODULE_DECLARE_DATA ssl_module;
+
+/* The verification callback from mod_ssl */
+extern int
+ssl_callback_SSLVerify(int ok, X509_STORE_CTX *ctx);
